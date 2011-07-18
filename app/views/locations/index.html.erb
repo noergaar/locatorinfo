@@ -13,7 +13,8 @@
   <tr>
     <td><%= location.title %></td>
     <td><%= image_tag(location.image_url) %></td>
-    <td><%= sanitize(location.description) %></td>
+    <td><%=truncate(strip_tags(location.description), :length => 80)%></td>
+
     <td><%= link_to 'Show', location %></td>
     <td><%= link_to 'Edit', edit_location_path(location) %></td>
     <td><%= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete %></td>
